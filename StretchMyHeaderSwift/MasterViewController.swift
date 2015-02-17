@@ -12,7 +12,7 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = data
-
+    var newsItems = newsFromData(data)
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -55,14 +55,14 @@ class MasterViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return newsItems.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as TableViewCell
 
-        let object = objects[indexPath.row] as Dictionary
-        cell.textLabel!.text = "Hi"
+        let newsItem = newsItems[indexPath.row]
+        cell.textLabel!.text = newsItem.headline
         return cell
     }
 

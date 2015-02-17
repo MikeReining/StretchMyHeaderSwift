@@ -15,6 +15,8 @@
 		2726687B1A93C94900F7279D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 272668791A93C94900F7279D /* LaunchScreen.xib */; };
 		272668871A93C94900F7279D /* StretchMyHeaderSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272668861A93C94900F7279D /* StretchMyHeaderSwiftTests.swift */; };
 		272668911A93C96400F7279D /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272668901A93C96400F7279D /* SampleData.swift */; };
+		272668941A93CA3000F7279D /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272668931A93CA3000F7279D /* TableViewCell.swift */; };
+		272668971A93D0C900F7279D /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272668961A93D0C900F7279D /* NewsItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		272668851A93C94900F7279D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		272668861A93C94900F7279D /* StretchMyHeaderSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchMyHeaderSwiftTests.swift; sourceTree = "<group>"; };
 		272668901A93C96400F7279D /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		272668931A93CA3000F7279D /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		272668951A93CB2700F7279D /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		272668961A93D0C900F7279D /* NewsItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,8 @@
 			children = (
 				2726686E1A93C94900F7279D /* AppDelegate.swift */,
 				272668901A93C96400F7279D /* SampleData.swift */,
+				272668961A93D0C900F7279D /* NewsItem.swift */,
+				272668951A93CB2700F7279D /* MyPlayground.playground */,
 				272668921A93C9A000F7279D /* Controllers */,
 				272668741A93C94900F7279D /* Main.storyboard */,
 				272668771A93C94900F7279D /* Images.xcassets */,
@@ -122,6 +129,7 @@
 			children = (
 				272668701A93C94900F7279D /* MasterViewController.swift */,
 				272668721A93C94900F7279D /* DetailViewController.swift */,
+				272668931A93CA3000F7279D /* TableViewCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -226,6 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				272668941A93CA3000F7279D /* TableViewCell.swift in Sources */,
+				272668971A93D0C900F7279D /* NewsItem.swift in Sources */,
 				272668731A93C94900F7279D /* DetailViewController.swift in Sources */,
 				272668711A93C94900F7279D /* MasterViewController.swift in Sources */,
 				2726686F1A93C94900F7279D /* AppDelegate.swift in Sources */,
