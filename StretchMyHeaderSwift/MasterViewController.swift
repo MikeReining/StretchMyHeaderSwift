@@ -62,7 +62,9 @@ class MasterViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as TableViewCell
 
         let newsItem = newsItems[indexPath.row]
-        cell.textLabel!.text = newsItem.headline
+        cell.headlineLabel.text = newsItem.headline
+        cell.categoryLabel.text = newsItem.category.simpleDescription()
+        cell.categoryLabel.textColor = newsItem.category.setColor()
         return cell
     }
 

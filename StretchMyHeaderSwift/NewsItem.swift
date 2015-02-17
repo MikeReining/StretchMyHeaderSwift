@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Mike Reining. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 enum NewsCategory {
     case World, Americas, Europe, MiddleEast, Africa, AsiaPacific
@@ -18,6 +18,16 @@ enum NewsCategory {
         case .MiddleEast: return "Middle East"
         case .Africa: return "Africa"
         case .AsiaPacific: return "Asia Pacific"
+        }
+    }
+    func setColor() -> UIColor {
+        switch self {
+        case .World: return UIColor.blueColor()
+        case .Americas: return UIColor.yellowColor()
+        case .Europe: return UIColor.redColor()
+        case .MiddleEast: return UIColor.greenColor()
+        case .Africa: return UIColor.orangeColor()
+        case .AsiaPacific: return UIColor.purpleColor()
         }
     }
 }

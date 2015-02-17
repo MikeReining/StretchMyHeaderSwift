@@ -9,6 +9,7 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-    @IBOutlet weak var headlineLabel: UIView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var headlineLabel: UILabel!
     
 }
