@@ -23,7 +23,7 @@ enum NewsCategory {
     func setColor() -> UIColor {
         switch self {
         case .World: return UIColor.blueColor()
-        case .Americas: return UIColor.yellowColor()
+        case .Americas: return UIColor.brownColor()
         case .Europe: return UIColor.redColor()
         case .MiddleEast: return UIColor.greenColor()
         case .Africa: return UIColor.orangeColor()
