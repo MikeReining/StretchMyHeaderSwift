@@ -12,4 +12,5 @@ class SplitViewController: UISplitViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
 }
