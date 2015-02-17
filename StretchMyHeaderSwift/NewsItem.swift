@@ -25,7 +25,7 @@ enum NewsCategory {
         case .World: return UIColor.blueColor()
         case .Americas: return UIColor.brownColor()
         case .Europe: return UIColor.redColor()
-        case .MiddleEast: return UIColor.greenColor()
+        case .MiddleEast: return UIColor.grayColor()
         case .Africa: return UIColor.orangeColor()
         case .AsiaPacific: return UIColor.purpleColor()
         }

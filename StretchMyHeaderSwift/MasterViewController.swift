@@ -13,8 +13,6 @@ class MasterViewController: UITableViewController {
     var detailViewController: DetailViewController? = nil
     var objects = data
     var newsItems = newsFromData(data)
-
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +26,7 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.navigationController?.setToolbarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,7 +64,8 @@ class MasterViewController: UITableViewController {
 
         let newsItem = newsItems[indexPath.row]
         cell.headlineLabel.text = newsItem.headline
-        cell.categoryLabel.text = newsItem.category.simpleDescription()
+        cell.categoryLabel.text = newsItem.category.simpleDescription().uppercaseString
+        
         cell.categoryLabel.textColor = newsItem.category.setColor()
         return cell
     }
@@ -75,8 +75,9 @@ class MasterViewController: UITableViewController {
         return false
     }
 
-
-
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
 
 }
 

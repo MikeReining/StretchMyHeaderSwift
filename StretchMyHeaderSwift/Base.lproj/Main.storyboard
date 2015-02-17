@@ -60,7 +60,7 @@
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
             <objects>
-                <splitViewController id="H1p-Uh-vWS" sceneMemberID="viewController">
+                <splitViewController id="H1p-Uh-vWS" customClass="SplitViewController" customModule="StretchMyHeaderSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <connections>
                         <segue destination="RMx-3f-FxP" kind="relationship" relationship="masterViewController" id="BlO-5A-QYV"/>
@@ -75,12 +75,12 @@
         <scene sceneID="smW-Zh-WAh">
             <objects>
                 <tableViewController title="Master" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="MasterViewController" customModule="StretchMyHeaderSwift" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="58" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.97859231345561326" green="0.97859231345561326" blue="0.97859231345561326" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="WCw-Qf-5nD" customClass="TableViewCell" customModule="StretchMyHeaderSwift" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="58" id="WCw-Qf-5nD" customClass="TableViewCell" customModule="StretchMyHeaderSwift" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
@@ -94,7 +94,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="headline" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gko-qk-H6m">
-                                            <rect key="frame" x="15" y="34" width="570" height="19.5"/>
+                                            <rect key="frame" x="15" y="27.5" width="570" height="20"/>
                                             <fontDescription key="fontDescription" name="Thonburi-Light" family="Thonburi" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -102,14 +102,20 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="gko-qk-H6m" firstAttribute="top" secondItem="Chw-Uc-uQb" secondAttribute="bottom" constant="7" id="54V-yg-10U"/>
+                                        <constraint firstItem="gko-qk-H6m" firstAttribute="top" secondItem="Chw-Uc-uQb" secondAttribute="bottom" id="54V-yg-10U"/>
                                         <constraint firstItem="Chw-Uc-uQb" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" id="9i6-Nz-Cik"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="gko-qk-H6m" secondAttribute="trailing" constant="7" id="K7t-FM-BpN"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gko-qk-H6m" secondAttribute="bottom" constant="2" id="MwO-eQ-ZyY"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Chw-Uc-uQb" secondAttribute="trailing" constant="7" id="O3S-hu-Ome"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="gko-qk-H6m" secondAttribute="bottom" constant="2.5" id="Wk2-LR-lh8"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gko-qk-H6m" secondAttribute="bottom" constant="2" id="Wk2-LR-lh8"/>
                                         <constraint firstItem="gko-qk-H6m" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="7" id="fzS-Gh-l38"/>
                                         <constraint firstItem="Chw-Uc-uQb" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" constant="7" id="sUt-lg-gg0"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Wk2-LR-lh8"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -148,6 +154,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>
