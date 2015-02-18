@@ -10,7 +10,8 @@ import UIKit
 import Foundation
 
 private let kTableHeaderHeight: CGFloat = 300.0
-private let kTableheaderCutAway: CGFloat = 60.0
+private let kTableheaderCutAway: CGFloat = 80.0
+private let adjustedHeight = kTableHeaderHeight - kTableheaderCutAway / 2
 
 class MasterViewController: UITableViewController, UIScrollViewDelegate {
     var headerView: UIView!
@@ -40,8 +41,8 @@ class MasterViewController: UITableViewController, UIScrollViewDelegate {
         headerView = tableView.tableHeaderView
         tableView.tableHeaderView = nil
         tableView.addSubview(headerView)
-        tableView.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
+        tableView.contentInset = UIEdgeInsets(top: adjustedHeight, left: 0, bottom: 0, right: 0)
+        tableView.contentOffset = CGPoint(x: 0, y: -adjustedHeight)
         
         // Adding CALayer
         headerMaskLayer = CAShapeLayer()
@@ -104,12 +105,13 @@ class MasterViewController: UITableViewController, UIScrollViewDelegate {
     
     //MARK:  Custom Table Header
     func updateHeaderView() {
-        var headerRect = CGRect(x: 0, y: -kTableHeaderHeight, width: tableView.bounds.width, height: kTableHeaderHeight)
+
+        var headerRect = CGRect(x: 0, y: -adjustedHeight, width: tableView.bounds.width, height: kTableHeaderHeight)
         // when we pull down beyond the top of the table view (contentOffset < -kTableHeaderHeight)
         // then we stretch the header image
-        if tableView.contentOffset.y < -kTableHeaderHeight {
+        if tableView.contentOffset.y < -adjustedHeight {
             headerRect.origin.y = tableView.contentOffset.y
-            headerRect.size.height = -tableView.contentOffset.y
+            headerRect.size.height = -tableView.contentOffset.y + kTableheaderCutAway / 2
         }
         headerView.frame = headerRect
         
