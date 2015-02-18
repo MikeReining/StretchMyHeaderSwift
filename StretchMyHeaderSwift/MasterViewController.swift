@@ -10,9 +10,11 @@ import UIKit
 import Foundation
 
 private let kTableHeaderHeight: CGFloat = 300.0
+private let kTableheaderCutAway: CGFloat = 60.0
 
 class MasterViewController: UITableViewController, UIScrollViewDelegate {
     var headerView: UIView!
+    var headerMaskLayer: CAShapeLayer!
     var detailViewController: DetailViewController? = nil
     var objects = data
     var newsItems = newsFromData(data)
@@ -40,7 +42,13 @@ class MasterViewController: UITableViewController, UIScrollViewDelegate {
         tableView.addSubview(headerView)
         tableView.contentInset = UIEdgeInsets(top: kTableHeaderHeight, left: 0, bottom: 0, right: 0)
         tableView.contentOffset = CGPoint(x: 0, y: -kTableHeaderHeight)
+        
+        // Adding CALayer
+        headerMaskLayer = CAShapeLayer()
+        headerView.layer.mask = headerMaskLayer
+        
         updateHeaderView()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,6 +112,15 @@ class MasterViewController: UITableViewController, UIScrollViewDelegate {
             headerRect.size.height = -tableView.contentOffset.y
         }
         headerView.frame = headerRect
+        
+        // Custom Layer to cut away part of image
+        let path = UIBezierPath()
+        path.moveToPoint(CGPoint(x: 0, y: headerRect.height - kTableheaderCutAway)) // left cutoff
+        path.addLineToPoint(CGPoint(x: headerRect.width, y: headerRect.height)) // bottom right
+        path.addLineToPoint(CGPoint(x: headerRect.width, y: 0)) // top right
+        path.addLineToPoint(CGPoint(x: 0, y: 0)) // back to start
+
+        headerMaskLayer?.path = path.CGPath
     }
 
     override func scrollViewDidScroll(scrollView: UIScrollView) {
