@@ -11,7 +11,7 @@ import Foundation
 
 private let kTableHeaderHeight: CGFloat = 300.0
 private let kTableheaderCutAway: CGFloat = 80.0
-private let adjustedHeight = kTableHeaderHeight - kTableheaderCutAway / 2
+private let adjustedHeight = kTableHeaderHeight - kTableheaderCutAway / 3
 
 class MasterViewController: UITableViewController, UIScrollViewDelegate {
     var headerView: UIView!
@@ -19,6 +19,7 @@ class MasterViewController: UITableViewController, UIScrollViewDelegate {
     var detailViewController: DetailViewController? = nil
     var objects = data
     var newsItems = newsFromData(data)
+    @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,9 +29,6 @@ class MasterViewController: UITableViewController, UIScrollViewDelegate {
         }
     }
     
-    
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -44,12 +42,17 @@ class MasterViewController: UITableViewController, UIScrollViewDelegate {
         tableView.contentInset = UIEdgeInsets(top: adjustedHeight, left: 0, bottom: 0, right: 0)
         tableView.contentOffset = CGPoint(x: 0, y: -adjustedHeight)
         
-        // Adding CALayer
+        // Adding CALayer to cut part of header image
         headerMaskLayer = CAShapeLayer()
         headerView.layer.mask = headerMaskLayer
-        
         updateHeaderView()
 
+        // Format Date
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MMMM dd" // January 28
+        let dateString = dateFormatter.stringFromDate(NSDate())
+        dateLabel.text = dateString
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -111,11 +114,11 @@ class MasterViewController: UITableViewController, UIScrollViewDelegate {
         // then we stretch the header image
         if tableView.contentOffset.y < -adjustedHeight {
             headerRect.origin.y = tableView.contentOffset.y
-            headerRect.size.height = -tableView.contentOffset.y + kTableheaderCutAway / 2
+            headerRect.size.height = -tableView.contentOffset.y + kTableheaderCutAway / 3
         }
         headerView.frame = headerRect
         
-        // Custom Layer to cut away part of image
+        // Define path for mask to specify what part of header image should be visible
         let path = UIBezierPath()
         path.moveToPoint(CGPoint(x: 0, y: headerRect.height - kTableheaderCutAway)) // left cutoff
         path.addLineToPoint(CGPoint(x: headerRect.width, y: headerRect.height)) // bottom right

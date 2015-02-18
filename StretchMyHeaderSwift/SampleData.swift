@@ -9,7 +9,7 @@
 import Foundation
 
 var data = [
-    ["category": "World","headline": "Test really short headline"],
+    ["category": "World","headline": "Climate change protests, divestments meet fossil fuels realities"],
     ["category":"Europe","headline":"Scotland's 'Yes' leader says independence vote is 'once in a lifetime'"],
     ["category": "Middle East", "headline":"Airstrikes boost Islamic State, FBI director warns more hostages possible"],
     ["category": "Africa","headline":"Nigeria says 70 dead in building collapse; questions S. Africa victim claim"],
