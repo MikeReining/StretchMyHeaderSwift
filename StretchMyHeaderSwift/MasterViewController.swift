@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class MasterViewController: UITableViewController {
 
@@ -27,6 +28,7 @@ class MasterViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,6 +70,7 @@ class MasterViewController: UITableViewController {
         
         cell.categoryLabel.textColor = newsItem.category.setColor()
         return cell
+        
     }
 
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -78,6 +81,8 @@ class MasterViewController: UITableViewController {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
+    
+
 
 }
 
